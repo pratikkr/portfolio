@@ -27,6 +27,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
 }
+body {
+  text-align: center;
+}
 
 nav {
   position: fixed;
@@ -54,7 +57,7 @@ nav .navbar .logo a {
   font-size: 35px;
   color: var(--primary-color);
 }
-nav.sticky .navbar .logo a {
+nav .sticky .navbar .logo a {
   color: var(--white-color);
 }
 nav .navbar .menu {
@@ -75,7 +78,7 @@ nav .navbar .menu a {
 }
 
 .navbar .menu a:hover {
-  color: var var(--primary-color);
+  color: var(--primary-color);
 }
 
 nav .sticky .menu a {
@@ -87,10 +90,10 @@ nav .sticky .menu a {
 
 .navbar .media-icons a {
   color: var(--primary-color);
-  font-size: 18px;
+  font-size: 24px;
   margin: 0 6px;
 }
-nav.sticky .media-icons a {
+nav .sticky .media-icons a {
   color: var(--white-color);
 }
 
@@ -103,7 +106,7 @@ nav .menu-btn,
   font-size: 20px;
   cursor: pointer;
   transition: all 0.35s ease;
-  /* display: none; */
+  display: none;
 }
 nav .menu-btn {
   color: var(--primary-color);
@@ -112,16 +115,16 @@ nav .menu-btn {
 nav .sticky .menu-btn {
   color: var(--white-color);
 }
-.navbar .menu .menu-btn {
+nav .navbar .menu .menu-btn {
   color: var(--white-color);
 }
 
 .home {
   height: 100vh;
   width: 100%;
-  background: url("image/porfolio.jpg") no-repeat;
+  background: url("pk.jpg") no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-attachment: fixed;
 }
 
@@ -135,7 +138,8 @@ nav .sticky .menu-btn {
 }
 
 .home .text-one {
-  font-size: 25px;
+  font-size: 45px;
+  font-weight: bold;
   color: var(--black-color);
 }
 .home .text-two {
@@ -148,13 +152,7 @@ nav .sticky .menu-btn {
 .home .text-three {
   font-size: 40px;
   margin: 5px 0;
-  color: var(--primary-color);
-}
-
-.home .text-four {
-  font-size: 23px;
-  margin: 5px 0;
-  color: var(--black-color);
+  color: #1b1a1b;
 }
 .home .button button {
   outline: none;
@@ -168,7 +166,9 @@ nav .sticky .menu-btn {
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
-
+.typing {
+  color: var(--primary-color);
+}
 .home .button button:hover {
   color: var(--primary-color);
   background-color: var(--white-color);
@@ -181,7 +181,6 @@ section {
 section .content {
   width: 80%;
   margin: 40px;
-  /* font-family: "popins", "sans-serif";  */
 }
 section .title {
   display: flex;
@@ -317,10 +316,10 @@ section .button button:hover {
   margin: 20px 0;
 }
 
-.skills-details .boxes .box {
+/* .skills-details .boxes .box {
   font-size: 20px;
   color: var(--primary-color);
-}
+} */
 
 .skills-details .boxes .box {
   font-size: 60px;
@@ -334,8 +333,9 @@ section .button button:hover {
 }
 .projects .boxes .box {
   margin: 20px 0;
-  width: calc(100% / 3 -20px);
+  width: 28%;
   text-align: center;
+  margin-left: 5%;
   border-radius: 12px;
   padding: 30px 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -381,15 +381,14 @@ section .button button:hover {
 
 .contact .text {
   width: 80%;
-  text-align: center;
   margin: auto;
+  text-align: center;
 }
 
 footer {
   background: var(--primary-color);
   padding: 15px 0;
   text-align: center;
-  font-family: "popins", sans-serif;
 }
 
 footer .text span {
@@ -405,4 +404,135 @@ footer .text span a {
 
 footer .text span a:hover {
   text-decoration: underline;
+}
+
+.scroll-button a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: var(--white-color);
+  background: var(--primary-color);
+  padding: 10px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+  }
+  .about .about-details .right {
+    width: 90%;
+    margin: 40px 0;
+  }
+  .projects .boxes .box {
+    margin: 20px 0;
+    width: 40%;
+  }
+}
+
+@media (max-width: 740px) {
+  nav .navbar {
+    width: 90%;
+  }
+
+  nav .navbar .menu {
+    position: fixed;
+    left: 100%;
+    top: 0;
+    background: var(--primary-color);
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+
+  nav .navbar .active .menu {
+    left: 0;
+  }
+  nav .navbar .menu a {
+    font-size: 23px;
+    display: black;
+    color: var(--white-color);
+    margin: 10px 0;
+  }
+
+  nav .sticky .menu a:hover {
+    color: var(--primary-color);
+  }
+  nav .navbar .media-icons {
+    display: none;
+  }
+  nav .menu-btn,
+  .navbar .menu .cancel-btn {
+    display: block;
+  }
+  .home .text-two {
+    font-size: 65px;
+  }
+  .home .text-three {
+    font-size: 35px;
+  }
+  .skills .skills-details {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .skills-details .text {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .skills-details .boxes {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .projects .boxes .box {
+    margin: 20px;
+    width: 80%;
+  }
+
+  .contact .text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about .about-details {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about .about-details .left {
+    display: flex;
+    justify-content: center;
+  }
+  .about .about-details .right {
+    width: 90%;
+    margin: 40px 0;
+  }
+  .projects .boxes .box {
+    margin: 20px 0;
+    width: 80%;
+  }
 }
